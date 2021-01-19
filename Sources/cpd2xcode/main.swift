@@ -21,8 +21,14 @@ struct CPD2xcode: ParsableCommand {
     }
 
     xmlRoot.elements(forName: "duplication").forEach { duplication in
+      let lines = duplication.attribute(forName: "lines")?.stringValue ?? ""
+
       duplication.elements(forName: "file").forEach { file in
-        print(file)
+        let path = file.attribute(forName: "path")?.stringValue ?? ""
+        let line = file.attribute(forName: "line")?.stringValue ?? ""
+        let result = "\(path):\(line):1: warning: \(lines) duplicated lines"
+
+        print(result)
       }
     }
   }
