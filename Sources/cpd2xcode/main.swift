@@ -11,15 +11,20 @@ struct CPD2xcode: ParsableCommand {
 
   func run() throws {
     guard FileManager.default.fileExists(atPath: xmlReport),
-          let xmlDoc = FileManager.default
+          let xmlRoot = FileManager.default
             .contents(atPath: xmlReport)
-            .map({ try? XMLDocument(data: $0, options: .documentTidyXML) })
+            .flatMap({ try? XMLDocument(data: $0, options: .documentTidyXML) })
+            .flatMap({ $0.rootElement() })
     else {
       print("ERROR XML input")
       return
     }
 
-    print(xmlDoc as Any)
+    xmlRoot.elements(forName: "duplication").forEach { duplication in
+      duplication.elements(forName: "file").forEach { file in
+        print(file)
+      }
+    }
   }
 }
 
