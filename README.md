@@ -13,7 +13,7 @@ A Swift command line tool to convert [PMD](https://pmd.github.io/)'s [Copy/Paste
 
 ## Usage
 
-Here's de command line help:
+Here's the command line help:
 ```
 OVERVIEW: A Swift command-line tool to convert PMD CPD results to Xcode warnings
 
