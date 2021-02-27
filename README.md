@@ -30,7 +30,7 @@ You should create a `Run Script` build phase for a target in your Xcode project,
 
 ## Dependencies
 
-- [ArgumentParser](https://github.com/apple/swift-argument-parser) from Apple
+- [Swift Argument Parser](https://github.com/apple/swift-argument-parser) from Apple
 
 ## Author
 
