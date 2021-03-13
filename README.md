@@ -9,7 +9,7 @@ A Swift command line tool to convert [PMD](https://pmd.github.io/)'s [Copy/Paste
 ## Installation
 
 1. Clone this repo
-2. Execute `install.sh` (it basically builds the executable and puts it in `/usr/local/bin`)
+2. Execute `make` (it basically builds the executable and puts it in `/usr/local/bin`)
 
 ## Usage
 
